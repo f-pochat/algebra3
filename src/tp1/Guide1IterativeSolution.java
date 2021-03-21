@@ -31,7 +31,6 @@ public class Guide1IterativeSolution implements Guide1 {
 
     @Override
     public int exercise_1_f(int n){
-        //preuba
         int sum = 0;
         for (int i = 1; i <= n; i++) {
             sum += Math.pow(i, 3);
