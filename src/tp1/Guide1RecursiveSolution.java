@@ -42,14 +42,6 @@ public class Guide1RecursiveSolution implements Guide1 {
         return sum;
     }
 
-    public int exercise_1_f(int n, int i, int sum){
-        if (i <= n) {
-            sum += Math.pow(i, 3);
-            return exercise_1_f(n, i+1, sum);
-        }
-        return sum;
-    }
-
     @Override
     public int exercise_2_a(int n) {
         throw new UnsupportedOperationException("TODO");
