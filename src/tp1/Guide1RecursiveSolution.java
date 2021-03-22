@@ -31,13 +31,13 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public int exercise_1_f(int n) {
-        return auxexercise_1_f(n,0,0);
+        return aux_exercise_1_f(n,0,0);
     }
 
-    public int auxexercise_1_f(int n, int i, int sum){
+    public int aux_exercise_1_f(int n, int i, int sum){
         if (i <= n) {
             sum += Math.pow(i, 3);
-            return auxexercise_1_f(n, i+1, sum);
+            return aux_exercise_1_f(n, i+1, sum);
         }
         return sum;
     }
@@ -75,15 +75,15 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public boolean exercise_4(int[] array) {
-        return auxexercise_4(array,0);
+        return aux_exercise_4(array,0);
     }
 
-    public boolean auxexercise_4(int[] elements, int i){
+    public boolean aux_exercise_4(int[] elements, int i){
         if (i < elements.length) {
             if (elements[i] != elements[elements.length-i-1]) {
                 return false;
             }
-            return auxexercise_4(elements, i+1);
+            return aux_exercise_4(elements, i+1);
         }
         return true;
     }
@@ -105,18 +105,18 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public int exercise_6_b_iii(int n) {
-        return auxexercise_6_b_iii(n,0,2);
+        return aux_exercise_6_b_iii(n,0,2);
     }
 
-    public int auxexercise_6_b_iii(int n, int amount, int factor){
+    public int aux_exercise_6_b_iii(int n, int amount, int factor){
         if(factor > n){
             return amount;
         }else if (n % factor == 0){
             n = n/factor;
-            return auxexercise_6_b_iii(n,amount+1, factor);
+            return aux_exercise_6_b_iii(n,amount+1, factor);
         }else if(factor > 2) {  // como el unico numero primo par es el 2, se saltea los numeros pares mayores a este.
-            return auxexercise_6_b_iii(n, amount, factor + 2);
-        }else return auxexercise_6_b_iii(n, amount, factor + 1);
+            return aux_exercise_6_b_iii(n, amount, factor + 2);
+        }else return aux_exercise_6_b_iii(n, amount, factor + 1);
     }
 
     @Override
@@ -126,15 +126,15 @@ public class Guide1RecursiveSolution implements Guide1 {
 
     @Override
     public int exercise_8(int[] coefs, int n) {
-        return auxexercise_8(coefs,n,coefs.length-1,0);
+        return aux_exercise_8(coefs,n,coefs.length-1,0);
     }
 
-    private int auxexercise_8(int[] coefs, int n, int i, int result){
+    private int aux_exercise_8(int[] coefs, int n, int i, int result){
         if (i < 0){
             return result;
         }else {
             result = result*n + coefs[i];
-            return auxexercise_8(coefs,n,i-1,result);
+            return aux_exercise_8(coefs,n,i-1,result);
         }
     }
 }
