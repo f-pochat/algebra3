@@ -34,7 +34,13 @@ public class Guide6Solution implements Guide6 {
 
     @Override
     public int exercise_1_f(int[] a) {
-        throw new UnsupportedOperationException("TODO");
+        int counter = 0;
+        for(int i = 0; i < a.length; i += 2){
+            if (a[i] % 2 == 1){
+                counter += a[i];
+            }
+        }
+        return counter;
     }
 
     @Override
@@ -99,16 +105,36 @@ public class Guide6Solution implements Guide6 {
 
     @Override
     public double exercise_7_a(Survey[] surveys) {
-        throw new UnsupportedOperationException("TODO");
+        int counterOfFiction = 0;
+        int counterOfWomenWhoReadsFiction = 0;
+        for (Survey survey: surveys){
+            if (survey.type == 1){
+                counterOfFiction++;
+                if (survey.sex == 2){
+                    counterOfWomenWhoReadsFiction++;
+                }
+            }
+        }
+        return (double) counterOfWomenWhoReadsFiction/counterOfFiction;
     }
 
     @Override
     public double exercise_7_b(Survey[] surveys) {
-        throw new UnsupportedOperationException("TODO");
+        int counter = 0;
+        for (Survey survey: surveys){
+            counter += survey.age;
+        }
+        return (double)counter/surveys.length;
     }
 
     @Override
     public int exercise_7_c(Survey[] surveys) {
-        throw new UnsupportedOperationException("TODO");
+        int counter = 0;
+        for (Survey survey: surveys){
+            if (survey.age > 21 && survey.type == 2){
+                counter++;
+            }
+        }
+        return counter;
     }
 }
