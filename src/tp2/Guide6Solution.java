@@ -80,7 +80,27 @@ public class Guide6Solution implements Guide6 {
 
     @Override
     public boolean exercise_4(int[] a) {
-        throw new UnsupportedOperationException("TODO");
+        int sum = 0;
+        boolean isGaspariforme = true;
+        for (int i = 0; i < a.length; i++) {
+            sum += a[i];
+        }
+        if (sum == 0) {
+            for (int i = 0; i < a.length; i++) {
+                for (int j = 0; j < i; j++) {
+                    sum += a[j];
+                }
+                if (sum < 0) {
+                    isGaspariforme = false;
+                    break;
+                } else {
+                    sum = 0;
+                }
+            }
+        } else {
+            isGaspariforme = false;
+        }
+        return isGaspariforme;
     }
 
     @Override
@@ -100,7 +120,15 @@ public class Guide6Solution implements Guide6 {
 
     @Override
     public int[] exercise_6(int[] infraction) {
-        throw new UnsupportedOperationException("TODO");
+        int[] s = new int[infraction.length];
+        for (int i = 0; i < infraction.length; i++) {
+            int sum = 0;
+            for (int j = 0; j <= i; j++) {
+                sum += infraction[j];
+            }
+            s[i] = sum;
+        }
+        return s;
     }
 
     @Override
